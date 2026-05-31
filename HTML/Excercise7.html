@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Invite</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        video {
+            border: 3px solid black;
+        }
+
+        #message {
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+
+    <script>
+        window.onbeforeunload = function () {
+            return "Are you sure you want to leave this page?";
+        };
+
+        function videoReady() {
+            document.getElementById("message").innerHTML =
+                "Video ready to play!";
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Event Promo Video</h2>
+
+    <video width="500" controls oncanplay="videoReady()">
+        <source src="promo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <p id="message"></p>
+
+</body>
+</html>
