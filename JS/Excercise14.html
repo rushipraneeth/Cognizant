@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Example</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        #eventCard {
+            border: 1px solid black;
+            padding: 10px;
+            width: 250px;
+            margin-top: 20px;
+        }
+
+        #benefit {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Community Event</h2>
+
+    <div id="eventCard">
+        <h3>Music Festival</h3>
+        <p>Seats Available: 50</p>
+    </div>
+
+    <br>
+
+    <button id="registerBtn">Register</button>
+    <button id="hideBtn">Hide Event</button>
+
+    <p id="benefit"></p>
+
+    <script>
+
+        // Handle Register Button Click
+        $("#registerBtn").click(function () {
+            alert("Registration Successful!");
+        });
+
+        // Fade Out Event Card
+        $("#hideBtn").click(function () {
+            $("#eventCard").fadeOut(1000);
+        });
+
+        // Fade In Event Card after 3 seconds
+        setTimeout(function () {
+            $("#eventCard").fadeIn(1000);
+        }, 3000);
+
+        // Benefit of React/Vue
+        $("#benefit").text(
+            "Benefit of React/Vue: They use a component-based architecture, making large applications easier to develop, maintain, and reuse."
+        );
+
+    </script>
+
+</body>
+</html>
