@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Web Design</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            padding: 2vh;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 2vw;
+            font-size: 1.2rem;
+        }
+
+        /* Content Section */
+        .container {
+            display: flex;
+            gap: 2vw;
+            padding: 2vw;
+        }
+
+        .card {
+            flex: 1;
+            border: 1px solid black;
+            padding: 2vw;
+        }
+
+        img {
+            width: 50%;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 3vw;
+        }
+
+        p {
+            font-size: 1.2vw;
+        }
+
+        /* Media Query */
+        @media screen and (max-width: 768px) {
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 6vw;
+            }
+
+            p {
+                font-size: 4vw;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Events</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h1>Community Event</h1>
+            <img src="event.jpg" alt="Event Image">
+            <p>Welcome to our community event portal.</p>
+        </div>
+
+        <div class="card">
+            <h1>Upcoming Programs</h1>
+            <img src="event.jpg" alt="Event Image">
+            <p>Stay updated with local activities.</p>
+        </div>
+    </div>
+
+</body>
+</html>
