@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Event Registration</h2>
+
+    <form id="registrationForm">
+
+        <label>Name:</label>
+        <input type="text" name="name">
+        <span id="nameError" class="error"></span>
+        <br><br>
+
+        <label>Email:</label>
+        <input type="email" name="email">
+        <span id="emailError" class="error"></span>
+        <br><br>
+
+        <label>Select Event:</label>
+        <select name="event">
+            <option value="">--Select--</option>
+            <option value="Music Festival">Music Festival</option>
+            <option value="Coding Workshop">Coding Workshop</option>
+            <option value="Art Exhibition">Art Exhibition</option>
+        </select>
+        <span id="eventError" class="error"></span>
+        <br><br>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <p id="success"></p>
+
+    <script>
+
+        const form = document.getElementById("registrationForm");
+
+        form.onsubmit = function(event) {
+
+            // Prevent page refresh
+            event.preventDefault();
+
+            // Clear previous errors
+            document.getElementById("nameError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("eventError").textContent = "";
+            document.getElementById("success").textContent = "";
+
+            // Capture form values using form.elements
+            const name = form.elements["name"].value.trim();
+            const email = form.elements["email"].value.trim();
+            const selectedEvent = form.elements["event"].value;
+
+            let isValid = true;
+
+            // Name validation
+            if (name === "") {
+                document.getElementById("nameError").textContent =
+                    " Name is required";
+                isValid = false;
+            }
+
+            // Email validation
+            if (email === "") {
+                document.getElementById("emailError").textContent =
+                    " Email is required";
+                isValid = false;
+            }
+
+            // Event validation
+            if (selectedEvent === "") {
+                document.getElementById("eventError").textContent =
+                    " Please select an event";
+                isValid = false;
+            }
+
+            // Success message
+            if (isValid) {
+                document.getElementById("success").textContent =
+                    `Registration successful for ${name}!`;
+            }
+        };
+
+    </script>
+
+</body>
+</html>
