@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table Styling</title>
+
+    <style>
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th {
+            border: 1px solid black;
+            padding: 10px;
+            background-color: lightblue;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            background-color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Event Schedule</h2>
+
+    <table>
+        <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>Venue</th>
+        </tr>
+
+        <tr>
+            <td>Music Festival</td>
+            <td>10-06-2026</td>
+            <td>City Hall</td>
+        </tr>
+
+        <tr>
+            <td>Food Fair</td>
+            <td>15-06-2026</td>
+            <td>Community Park</td>
+        </tr>
+
+        <tr>
+            <td>Sports Meet</td>
+            <td>20-06-2026</td>
+            <td>Stadium</td>
+        </tr>
+    </table>
+
+</body>
+</html>
