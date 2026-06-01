@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Community Events</title>
+</head>
+<body>
+
+    <h1>Community Events</h1>
+
+    <div id="eventContainer"></div>
+
+    <script>
+        const events = [
+            { name: "Music Festival", seats: 5 },
+            { name: "Coding Workshop", seats: 3 },
+            { name: "Art Exhibition", seats: 2 }
+        ];
+
+        // Access DOM element using querySelector()
+        const container = document.querySelector("#eventContainer");
+
+        // Function to render events
+        function renderEvents() {
+            container.innerHTML = "";
+
+            events.forEach(event => {
+                const card = document.createElement("div");
+
+                card.innerHTML = `
+                    <h3>${event.name}</h3>
+                    <p>Available Seats: ${event.seats}</p>
+                `;
+
+                // Register Button
+                const registerBtn = document.createElement("button");
+                registerBtn.textContent = "Register";
+
+                registerBtn.onclick = function() {
+                    if (event.seats > 0) {
+                        event.seats--;
+                        renderEvents();
+                    }
+                };
+
+                // Cancel Button
+                const cancelBtn = document.createElement("button");
+                cancelBtn.textContent = "Cancel";
+
+                cancelBtn.onclick = function() {
+                    event.seats++;
+                    renderEvents();
+                };
+
+                card.appendChild(registerBtn);
+                card.appendChild(cancelBtn);
+
+                container.appendChild(card);
+            });
+        }
+
+        renderEvents();
+    </script>
+
+</body>
+</html> 
