@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Handling</title>
+</head>
+<body>
+
+    <h1>Community Events</h1>
+
+    <!-- Category Filter -->
+    <label>Filter by Category:</label>
+    <select id="categoryFilter">
+        <option value="All">All</option>
+        <option value="Music">Music</option>
+        <option value="Technology">Technology</option>
+        <option value="Art">Art</option>
+    </select>
+
+    <br><br>
+
+    <!-- Search Box -->
+    <input type="text" id="searchBox" placeholder="Search event by name">
+
+    <hr>
+
+    <!-- Events Container -->
+    <div id="eventContainer"></div>
+
+    <script>
+        const events = [
+            { name: "Music Festival", category: "Music", seats: 5 },
+            { name: "Coding Workshop", category: "Technology", seats: 3 },
+            { name: "Art Exhibition", category: "Art", seats: 2 }
+        ];
+
+        const container = document.querySelector("#eventContainer");
+        const categoryFilter = document.querySelector("#categoryFilter");
+        const searchBox = document.querySelector("#searchBox");
+
+        function displayEvents() {
+            container.innerHTML = "";
+
+            let filteredEvents = events.filter(event => {
+                const categoryMatch =
+                    categoryFilter.value === "All" ||
+                    event.category === categoryFilter.value;
+
+                const searchMatch =
+                    event.name.toLowerCase().includes(
+                        searchBox.value.toLowerCase()
+                    );
+
+                return categoryMatch && searchMatch;
+            });
+
+            filteredEvents.forEach(event => {
+                const card = document.createElement("div");
+
+                card.innerHTML = `
+                    <h3>${event.name}</h3>
+                    <p>Category: ${event.category}</p>
+                    <p>Seats: ${event.seats}</p>
+                `;
+
+                const btn = document.createElement("button");
+                btn.textContent = "Register";
+
+                // onclick
+                btn.onclick = function () {
+                    if (event.seats > 0) {
+                        event.seats--;
+                        displayEvents();
+                    } else {
+                        alert("No seats available!");
+                    }
+                };
+
+                card.appendChild(btn);
+                container.appendChild(card);
+            });
+        }
+
+        // onchange
+        categoryFilter.onchange = function () {
+            displayEvents();
+        };
+
+        // onkeydown
+        searchBox.onkeydown = function () {
+            setTimeout(displayEvents, 0);
+        };
+
+        displayEvents();
+    </script>
+
+</body>
+</html>
