@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Box Model & Layout Control</title>
+
+    <style>
+        .eventCard {
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px;
+            background-color: lightyellow;
+        }
+
+        input:focus {
+            outline: 3px solid blue;
+        }
+
+        .hiddenBox {
+            visibility: hidden;
+            border: 1px solid red;
+            padding: 10px;
+        }
+
+        .noneBox {
+            display: none;
+            border: 1px solid green;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="eventCard">
+        <h2>Music Festival</h2>
+        <p>Enjoy live music and entertainment.</p>
+    </div>
+
+    <h3>Registration Form</h3>
+    <input type="text" placeholder="Enter your name">
+
+    <h3>Visibility Hidden</h3>
+    <div class="hiddenBox">
+        This box is hidden but space is reserved.
+    </div>
+
+    <h3>Display None</h3>
+    <div class="noneBox">
+        This box is hidden and no space is reserved.
+    </div>
+
+</body>
+</html>
