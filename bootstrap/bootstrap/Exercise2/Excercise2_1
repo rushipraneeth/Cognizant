@@ -1,0 +1,72 @@
+bootstrap/
+│
+├── css/
+│   ├── bootstrap.css
+│   ├── bootstrap.min.css
+│
+├── js/
+│   ├── bootstrap.js
+│   ├── bootstrap.bundle.js
+│   ├── bootstrap.min.js
+│   └── bootstrap.bundle.min.js
+│
+└── icons/
+
+
+
+Purpose of Each Folder
+CSS Folder
+
+Contains Bootstrap styling files.
+
+Examples:
+
+bootstrap.css → readable version
+bootstrap.min.css → compressed version used in production
+
+Purpose:
+
+Layout
+Grid system
+Buttons
+Forms
+Cards
+Navigation bars
+
+JS Folder
+
+Contains Bootstrap JavaScript functionality.
+
+Examples:
+
+Modal
+Accordion
+Collapse
+Dropdown
+Tooltip
+Carousel
+
+Important Files:
+
+bootstrap.js
+bootstrap.bundle.js
+
+bootstrap.bundle.js includes Popper.js, which is required for components like dropdowns and tooltips.
+
+
+Icons Folder
+
+Contains Bootstrap Icons.
+
+Examples:
+
+<i class="bi bi-house"></i>
+<i class="bi bi-person"></i>
+<i class="bi bi-search"></i>
+
+Purpose:
+
+Social media icons
+Navigation icons
+Action buttons
+User interface icons
